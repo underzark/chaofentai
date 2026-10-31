@@ -1,0 +1,11 @@
+{
+  "name": "chaofentai",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/test.mjs && node scripts/test-background.mjs && node scripts/test-diagnostics.mjs && node scripts/test-review-v22.mjs && node scripts/test-manual-v23.mjs && node scripts/test-lease-v24.mjs && node scripts/test-regular-v27.mjs && node scripts/test-jpeg-v27.mjs && node scripts/test-studio-state.mjs && node scripts/test-jpeg-v28.mjs && node scripts/test-heavy-v28.mjs && node scripts/test-work-history-v29.mjs && node scripts/test-jpeg-upright-v29.mjs && node scripts/test-storage-v30.mjs && node scripts/test-instructions-v32.mjs && node test-jpeg-trailer-v35.mjs && node scripts/test-fresh-install.mjs",
+    "validate": "node scripts/validate-artifact.mjs"
+  },
+  "license": "MIT"
+}

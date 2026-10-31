@@ -1,0 +1,1 @@
+CREATE TABLE probes (id TEXT PRIMARY KEY NOT NULL, owner TEXT NOT NULL, idem TEXT NOT NULL, asset_id TEXT NOT NULL, seconds INTEGER NOT NULL, started INTEGER NOT NULL, lastbeat INTEGER NOT NULL, state TEXT NOT NULL, finished INTEGER, UNIQUE(owner,idem));

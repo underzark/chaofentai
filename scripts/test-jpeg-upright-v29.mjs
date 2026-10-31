@@ -1,0 +1,5 @@
+import assert from 'node:assert/strict';import {readFile} from 'node:fs/promises';import {jpegInfo,validateInput} from '../worker/image-input.mjs';
+const b=new Uint8Array(await readFile('scripts/fixtures-v29/upright-2414752.jpg'));const before=Buffer.from(b);const info=await validateInput(b);assert.equal(info.width,1888);assert.equal(info.height,1279);assert.equal(info.direct,true);assert.equal(info.normalized,null);assert.deepEqual(Buffer.from(b),before);
+await assert.rejects(()=>validateInput(b.slice(0,-4)));const bad=b.slice();let i=2;for(;i<bad.length;){const marker=bad[i+1],len=(bad[i+2]<<8)|bad[i+3];if(marker===192){bad[i+5]=255;bad[i+6]=255;break;}i+=2+len;}assert.throws(()=>jpegInfo(bad),/maximum/);
+const missing=b.slice();for(let p=2;p<missing.length;){const marker=missing[p+1],n=(missing[p+2]<<8)|missing[p+3];if(marker===196){missing[p+1]=254;break;}p+=2+n;}await assert.rejects(()=>validateInput(missing),/Missing JPEG coding table/);
+console.log('PASS v29 upright 2414752px JPEG: bounded baseline direct bytes, no normalization/decode allocation, truncated/dimension/table failures. Entropy pixels are not decoded on direct path.');

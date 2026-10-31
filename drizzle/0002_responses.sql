@@ -1,0 +1,1 @@
+CREATE TABLE response_jobs (id TEXT PRIMARY KEY, owner TEXT NOT NULL, idem TEXT NOT NULL, fingerprint TEXT NOT NULL, state TEXT NOT NULL, response_id TEXT, receipt TEXT, revised_prompt TEXT, output_key TEXT, UNIQUE(owner,idem));

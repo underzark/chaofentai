@@ -1,0 +1,3 @@
+CREATE TABLE assets (id TEXT PRIMARY KEY NOT NULL, owner TEXT NOT NULL, hash TEXT NOT NULL, width INTEGER NOT NULL, height INTEGER NOT NULL, bytes INTEGER NOT NULL);
+--> statement-breakpoint
+CREATE TABLE jobs (id TEXT PRIMARY KEY NOT NULL, owner TEXT NOT NULL, idem TEXT NOT NULL, fingerprint TEXT NOT NULL, asset_id TEXT NOT NULL, ready_at INTEGER NOT NULL, UNIQUE(owner,idem));

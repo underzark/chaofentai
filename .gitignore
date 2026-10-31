@@ -1,0 +1,27 @@
+# Local credentials and deployment state
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+*.pem
+*.key
+*.p12
+.wrangler/
+.openai/*
+!.openai/hosting.json
+node_modules/
+dist/
+site.tar.gz
+*.zip
+*.log
+.DS_Store
+__pycache__/
+runtime-tests/fixtures/
+runtime-tests/.mf/
+# Never commit user media, task exports or runtime databases
+data/
+outputs/
+*.sqlite
+*.sqlite-*
+*.db
