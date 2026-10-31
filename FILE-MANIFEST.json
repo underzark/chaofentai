@@ -20,6 +20,66 @@
     "sha256": "20b8254661b2e6d7261d0ce1582b5d91b3ce9e31591152fd28c368501fc7015c"
   },
   {
+    "path": "COST-BASIS.md",
+    "bytes": 2189,
+    "sha256": "746be86102b97ece31465f8fd5e9c3aa80678b0bddd4a53fe951a4ac06fdb484"
+  },
+  {
+    "path": "HANDOFF.md",
+    "bytes": 556,
+    "sha256": "e801777b87c62db660ba11bc33144298af02ed0e0bf8e18814bed8d801a676e8"
+  },
+  {
+    "path": "LICENSE",
+    "bytes": 1087,
+    "sha256": "309032e4e51e0a3c31cc471687bf8b199d15ace183192efec8806fb1e20ebd20"
+  },
+  {
+    "path": "MANUAL-TRIAL.md",
+    "bytes": 519,
+    "sha256": "5c56ed2a382225ade7378acaf3a2a29029bd26db97403d07cdf26b7c64abdebb"
+  },
+  {
+    "path": "NORMAL-MANUAL.md",
+    "bytes": 645,
+    "sha256": "1b771c648ff7c69e640d7e3318c05530d11d115e99d7695189d223f3556ddbb0"
+  },
+  {
+    "path": "PLUGIN-GUIDE.md",
+    "bytes": 2187,
+    "sha256": "6bd42588f5890b2c60cfec88cf37c9aaf52c9d20b44e3e5240ee891cf565c9e4"
+  },
+  {
+    "path": "README.md",
+    "bytes": 4802,
+    "sha256": "85ea1960e44e689b5d71f6bd040cd0a7bf3bd6cace0942ef4bde3bc39338680c"
+  },
+  {
+    "path": "RELEASE-CHECKLIST.md",
+    "bytes": 2091,
+    "sha256": "462462280961cc523ca0df2aa29dd421decccadaf8f532061ca75d03142bf8fa"
+  },
+  {
+    "path": "TESTING.md",
+    "bytes": 1047,
+    "sha256": "02e625479745990e68bd843a6503e1125aae2228b925f83cf93afc9a3de288d1"
+  },
+  {
+    "path": "THIRD-PARTY-NOTICES.md",
+    "bytes": 735,
+    "sha256": "95b89c9bcacf651dd230421486f6cc265085b32e5232f3421ac8ffe685b39420"
+  },
+  {
+    "path": "WORK-GUIDE.md",
+    "bytes": 5909,
+    "sha256": "694f1bc86a4e524447f922b79942bf4a579ae8932b78d79d3d48ed1d855be403"
+  },
+  {
+    "path": "WORK-HISTORY-V29.md",
+    "bytes": 666,
+    "sha256": "a22c9f691f7e698ceb65f1f3e633a6512bd073beec5337d9d78ae1e2056febf4"
+  },
+  {
     "path": "assets/logo-128.png",
     "bytes": 8545,
     "sha256": "62b8e2a1afb34693ae22ec87a4cf36384960afe12468bd4aea1491ce8a74b589"
@@ -35,9 +95,9 @@
     "sha256": "d65355119f6171612b75155b4c72eee89c78614d5dcd6c45dd250498bfca2900"
   },
   {
-    "path": "COST-BASIS.md",
-    "bytes": 2189,
-    "sha256": "746be86102b97ece31465f8fd5e9c3aa80678b0bddd4a53fe951a4ac06fdb484"
+    "path": "docs/USAGE.md",
+    "bytes": 3650,
+    "sha256": "8c55e6ebb315947bc72c44794e7aac36e323d0dc4a9c34f49db87e62219ae847"
   },
   {
     "path": "drizzle/0000_canvas.sql",
@@ -95,49 +155,14 @@
     "sha256": "e16d5530068df1aafc59039c8586d474da5e3e3d580ca59f682c150fddebc209"
   },
   {
-    "path": "HANDOFF.md",
-    "bytes": 556,
-    "sha256": "e801777b87c62db660ba11bc33144298af02ed0e0bf8e18814bed8d801a676e8"
-  },
-  {
-    "path": "LICENSE",
-    "bytes": 1087,
-    "sha256": "309032e4e51e0a3c31cc471687bf8b199d15ace183192efec8806fb1e20ebd20"
-  },
-  {
     "path": "licenses/Apache-2.0.txt",
     "bytes": 11358,
     "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
   },
   {
-    "path": "MANUAL-TRIAL.md",
-    "bytes": 519,
-    "sha256": "5c56ed2a382225ade7378acaf3a2a29029bd26db97403d07cdf26b7c64abdebb"
-  },
-  {
-    "path": "NORMAL-MANUAL.md",
-    "bytes": 645,
-    "sha256": "1b771c648ff7c69e640d7e3318c05530d11d115e99d7695189d223f3556ddbb0"
-  },
-  {
     "path": "package.json",
     "bytes": 840,
     "sha256": "3bd403b0e6cc1c1158aadde539a9ef1c1fde7a1adf79dab3733147efbe924e4d"
-  },
-  {
-    "path": "PLUGIN-GUIDE.md",
-    "bytes": 2187,
-    "sha256": "6bd42588f5890b2c60cfec88cf37c9aaf52c9d20b44e3e5240ee891cf565c9e4"
-  },
-  {
-    "path": "README.md",
-    "bytes": 4035,
-    "sha256": "3da0a0b612d6af79698d698fb37feb7605c6ede7a452fdccf4ab82991f73ecd2"
-  },
-  {
-    "path": "RELEASE-CHECKLIST.md",
-    "bytes": 2091,
-    "sha256": "462462280961cc523ca0df2aa29dd421decccadaf8f532061ca75d03142bf8fa"
   },
   {
     "path": "runtime-tests/.gitignore",
@@ -323,26 +348,6 @@
     "path": "test-jpeg-trailer-v35.mjs",
     "bytes": 2857,
     "sha256": "b6fbb6d56b19c4bfebc0a65946e956fcdb1fc807d20de2cf70d1a17f5c7da673"
-  },
-  {
-    "path": "TESTING.md",
-    "bytes": 1047,
-    "sha256": "02e625479745990e68bd843a6503e1125aae2228b925f83cf93afc9a3de288d1"
-  },
-  {
-    "path": "THIRD-PARTY-NOTICES.md",
-    "bytes": 735,
-    "sha256": "95b89c9bcacf651dd230421486f6cc265085b32e5232f3421ac8ffe685b39420"
-  },
-  {
-    "path": "WORK-GUIDE.md",
-    "bytes": 5909,
-    "sha256": "694f1bc86a4e524447f922b79942bf4a579ae8932b78d79d3d48ed1d855be403"
-  },
-  {
-    "path": "WORK-HISTORY-V29.md",
-    "bytes": 666,
-    "sha256": "a22c9f691f7e698ceb65f1f3e633a6512bd073beec5337d9d78ae1e2056febf4"
   },
   {
     "path": "worker/asset-storage.mjs",
