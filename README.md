@@ -42,31 +42,20 @@ agent 会读取原文件的实际尺寸，检查倍率是否可用，并整理�
 
 ## 快速开始
 
-### 部署使用
+### 把这句话发给你的 Agent
 
-需要支持 **Sites / Work 插件**的 ChatGPT 环境，以及可调用所需模型的 OpenAI API 项目。后端使用 Worker ESM、D1 和 R2。
-
-1. [下载源码 ZIP](https://github.com/underzark/chaofentai/archive/refs/heads/main.zip)，或克隆仓库。
-2. 将 [部署指南](AGENT-DEPLOY.md) 交给具备 Sites 能力的 agent，完成站点、存储和 MCP 插件配置。
-3. 在站点的服务端 secret 设置中配置一次 API key，完成无费用检查后开启使用。
-
-图像生成与协调模型会产生 API 费用；每单先确认，完成后显示用量估算。价格计算与未知用量的处理见 [费用说明](COST-BASIS.md)。
-
-### 本地开发预览
-
-使用 Node.js 24。根目录测试和构建不需要安装依赖：
-
-```sh
-git clone https://github.com/underzark/chaofentai.git
-cd chaofentai
-
-npm test
-npm run build
-npm run validate
-node scripts/preview.mjs
+```text
+帮我部署超分台：https://github.com/underzark/chaofentai
+先阅读 README 和部署指南：
+https://github.com/underzark/chaofentai/blob/main/AGENT-DEPLOY.md
+检查环境、依赖与权限，按指南完成部署和不收费的测试。
+需要我登录、配置密钥或批准权限时提醒我；不要自动发起付费生图。
+完成后给我站点入口、Work 插件使用方法，以及已验证和未验证的项目。
 ```
 
-打开 `http://127.0.0.1:43824`。本地预览使用内存存储和模拟身份，关闭生成，不会调用收费 API；云端部署步骤见上面的部署指南。Worker 运行时测试见 [TESTING.md](TESTING.md)。
+Agent 会按[部署指南](AGENT-DEPLOY.md)检查 Sites / Work 能力，获取源码、配置存储与插件，并完成无费用验收。登录与密钥配置等需要你接手的步骤会单独提示；环境不支持时应说明阻碍，不会跳过权限检查。
+
+后续实际生图会产生 API 费用，每单先确认，完成后显示用量估算，详见[费用说明](COST-BASIS.md)。技术步骤和测试命令留在 [Agent 部署指南](AGENT-DEPLOY.md)与[测试说明](TESTING.md)中。
 
 ## 适用范围
 

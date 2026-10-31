@@ -16,8 +16,8 @@
   },
   {
     "path": "AGENT-DEPLOY.md",
-    "bytes": 3832,
-    "sha256": "20b8254661b2e6d7261d0ce1582b5d91b3ce9e31591152fd28c368501fc7015c"
+    "bytes": 6017,
+    "sha256": "07af49b8dc277bd43b98008d1023507b46c237ea2cb87825360ba4859ec25051"
   },
   {
     "path": "COST-BASIS.md",
@@ -51,8 +51,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 4802,
-    "sha256": "85ea1960e44e689b5d71f6bd040cd0a7bf3bd6cace0942ef4bde3bc39338680c"
+    "bytes": 4642,
+    "sha256": "729016653475529f19f2dffe6df92051de3c1838f47a87fb21f37652a52a9903"
   },
   {
     "path": "RELEASE-CHECKLIST.md",
