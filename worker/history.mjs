@@ -33,7 +33,10 @@ export async function retainHistory(env,owner,trigger){
     AND NOT EXISTS(SELECT 1 FROM jobs WHERE owner=? AND asset_id=?)
     AND NOT EXISTS(SELECT 1 FROM probes WHERE owner=? AND asset_id=?)
     AND NOT EXISTS(SELECT 1 FROM assets WHERE owner=? AND normalized_id=?)
-    AND NOT EXISTS(SELECT 1 FROM manual_approvals WHERE owner=? AND expires_at>? AND json_extract(args_json,'$.asset_id')=?)`).bind(a.id,owner,owner,a.id,a.id,a.id,owner,a.id,owner,a.id,owner,a.id,owner,Date.now(),a.id).run();
+    AND NOT EXISTS(SELECT 1 FROM manual_approvals WHERE owner=? AND expires_at>? AND json_extract(args_json,'$.asset_id')=?)
+    AND NOT EXISTS(SELECT 1 FROM gif_outputs WHERE owner=? AND asset_id=?)
+    AND NOT EXISTS(SELECT 1 FROM gif_jobs j,json_each(j.request_json,'$.reference_images') r WHERE j.owner=? AND (json_extract(r.value,'$.asset_id')=? OR json_extract(r.value,'$.model_asset_id')=?))
+    AND NOT EXISTS(SELECT 1 FROM gif_quotes q,json_each(q.request_json,'$.reference_images') r WHERE q.owner=? AND q.expires_at>? AND (json_extract(r.value,'$.asset_id')=? OR json_extract(r.value,'$.model_asset_id')=?))`).bind(a.id,owner,owner,a.id,a.id,a.id,owner,a.id,owner,a.id,owner,a.id,owner,Date.now(),a.id,owner,a.id,owner,a.id,a.id,owner,Date.now(),a.id,a.id).run();
    const claimed=await env.DB.prepare("SELECT * FROM assets WHERE id=? AND owner=? AND storage_state='deleting'").bind(a.id,owner).first();if(!claimed)continue;
    // New uploads use unique object keys. A delayed old delete can never remove a replacement's bytes.
    await env.BUCKET.delete(claimed.storage_key||'files/'+claimed.id);

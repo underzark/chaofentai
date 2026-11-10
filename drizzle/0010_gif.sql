@@ -1,0 +1,7 @@
+CREATE TABLE gif_quotes(id TEXT PRIMARY KEY,owner TEXT NOT NULL,channel TEXT NOT NULL,quote_hash TEXT NOT NULL,request_json TEXT NOT NULL,confirmation_text TEXT NOT NULL,expires_at INTEGER NOT NULL,confirmed_at INTEGER,user_confirmation TEXT);
+CREATE TABLE gif_jobs(id TEXT PRIMARY KEY,owner TEXT NOT NULL,idem TEXT NOT NULL,state TEXT NOT NULL,request_json TEXT NOT NULL,created_at INTEGER NOT NULL,request_id TEXT,receipt_json TEXT,error TEXT,UNIQUE(owner,idem));
+CREATE INDEX gif_history_owner ON gif_jobs(owner,created_at);
+CREATE TABLE gif_outputs(job_id TEXT NOT NULL,owner TEXT NOT NULL,position INTEGER NOT NULL,asset_id TEXT NOT NULL,metadata_json TEXT NOT NULL,PRIMARY KEY(job_id,position));
+CREATE TRIGGER gif_output_asset BEFORE INSERT ON gif_outputs WHEN NOT EXISTS(SELECT 1 FROM assets WHERE id=NEW.asset_id AND owner=NEW.owner AND storage_state='active') OR NOT EXISTS(SELECT 1 FROM gif_jobs WHERE id=NEW.job_id AND owner=NEW.owner) BEGIN SELECT RAISE(ABORT,'GIF output must reference owned active media and job'); END;
+CREATE TRIGGER protect_gif_asset_delete BEFORE DELETE ON assets WHEN EXISTS(SELECT 1 FROM gif_outputs WHERE asset_id=OLD.id AND owner=OLD.owner) BEGIN SELECT RAISE(ABORT,'GIF media is retained'); END;
+CREATE TRIGGER protect_gif_asset_state BEFORE UPDATE OF storage_state ON assets WHEN NEW.storage_state!='active' AND EXISTS(SELECT 1 FROM gif_outputs WHERE asset_id=OLD.id AND owner=OLD.owner) BEGIN SELECT RAISE(ABORT,'GIF media is retained'); END;
