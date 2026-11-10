@@ -47,3 +47,8 @@
 
 ## Independent deployment
 Deploy a new owner-private Site with your own API secret. Set STUDIO_SUBTITLE to the agent name, then user name; ask if both are unknown. Default LIVE/POLL stays false. For reviewed ordinary browser use, follow NORMAL-MANUAL.md and obtain owner activation; every order still needs explicit confirmation. MANUAL-TRIAL.md is optional one-shot testing only. No automatic agent spending. Unknown usage or tier means unknown cost. Return one uncropped original PNG plus usage-derived cost.
+
+
+## GIF 动画
+
+网页 `/gif` 与 Work 共用逐单确认后端。使用 `canvas_gif_options`、`canvas_prepare_gif`、`canvas_confirm_gif`、`canvas_get_gif`、`canvas_gif_history`；交付原 GIF，不走 PNG 超分流程。完整参数、限制、费用与免费测试见 [GIF-GUIDE.md](GIF-GUIDE.md)。

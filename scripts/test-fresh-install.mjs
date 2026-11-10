@@ -6,6 +6,6 @@ const files=(await readdir('drizzle')).filter(f=>/^\d+.*\.sql$/.test(f)).sort();
 assert.deepEqual(journal.entries.map(e=>e.tag+'.sql'),files);
 const db=new DatabaseSync(':memory:');
 for(const [i,e] of journal.entries.entries()){assert.equal(e.idx,i);if(i)assert.ok(e.when>journal.entries[i-1].when);db.exec(await readFile('drizzle/'+e.tag+'.sql','utf8'));}
-for(const table of ['manual_approvals','work_quotes','response_jobs','assets'])assert.ok(db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name=?").get(table));
+for(const table of ['manual_approvals','work_quotes','response_jobs','assets','gif_quotes','gif_jobs','gif_outputs'])assert.ok(db.prepare("SELECT name FROM sqlite_master WHERE type='table' AND name=?").get(table));
 for(const col of ['manual_grant_id','poll_token','poll_expires_at'])assert.ok(db.prepare('PRAGMA table_info(response_jobs)').all().some(r=>r.name===col));
-console.log('Fresh journal-driven installation includes all 10 migrations and manual/Work schema');
+console.log('Fresh journal-driven installation includes all '+files.length+' migrations and manual/Work/GIF schema');

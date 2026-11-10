@@ -12,6 +12,10 @@
 
 [快速开始](#快速开始) · [使用指南](docs/USAGE.md) · [Work 工作流](WORK-GUIDE.md) · [部署指南](AGENT-DEPLOY.md)
 
+## GIF 动画
+
+新增独立 `/gif` 页面，可手动生成，也可通过 Work 的 GIF 工具逐单确认。支持 GPT Image 2.6 Sunburst/Flare、帧数、播放速度、尺寸、画质和数量；原超分仍用 2.5。支持文字生成或上传静态 PNG/JPEG 参考图生成 GIF，费用暂不作固定预估。详见 [GIF 使用指南](GIF-GUIDE.md)。
+
 ## 功能
 
 - **按意图增强**：分别描述增强区域和严格保留项，减少笼统提示词带来的偏移。

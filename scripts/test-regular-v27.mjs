@@ -27,7 +27,8 @@ assert.equal((await call('/api/background', {...args,approved:true,idempotency_k
 const mcp=await (await call('/mcp',{id:1,method:'tools/call',params:{name:'canvas_submit_background',arguments:{...args,approved:true,idempotency_key:'mcp-bypass'}}})).json();assert.equal(mcp.result.isError,true);assert.equal(posts,1);
 sql.prepare("UPDATE response_jobs SET state='submission_unknown'").run();assert.equal((await (await call('/api/status')).json()).manual_trial.available,false);assert.equal((await call('/api/manual/prepare',args)).status,409);
 sql.prepare("UPDATE response_jobs SET state='completed'").run();assert.equal((await (await call('/api/status')).json()).manual_trial.available,true);
-await call('/api/manual/submit',{approval_id:one.approval_id,approved:true});assert.equal(posts,1);
+const winner=[one,two].find(q=>q.idempotency_key===accepted.idem);assert.ok(winner);
+await call('/api/manual/submit',{approval_id:winner.approval_id,approved:true});assert.equal(posts,1);
 const three=await prep({...args,image_model:'gpt-image-2.5-flare'});assert.equal(three.plan.image_model,'gpt-image-2.5-flare');
 assert.equal((await call('/api/manual/submit',{approval_id:three.approval_id,approved:true},env,'other')).status,409);
 await call('/api/manual/submit',{approval_id:three.approval_id,approved:true});assert.equal(posts,2);
